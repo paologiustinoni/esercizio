@@ -91,7 +91,7 @@ public class AccountControllerTest extends ControllerTest {
 		mockMvc.perform(MockMvcRequestBuilders.post("/account/moneyTransfer")
                 .params(requestParams)
                 .contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk());
+                .andExpect(status().isBadRequest());
 	}
 
     private LinkedMultiValueMap<String, String> createParamsMoneyTransfer(String receiverName, String description, String currency, String amount, String executionDate) {
